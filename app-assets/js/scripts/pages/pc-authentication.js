@@ -84,15 +84,9 @@ auth.onAuthStateChanged(user => {
             });
         }
     } else {
-        if (document.URL.includes("index.html")) {
-            window.stop();
-            window.location.href = "/ShowcaseDemo";
-            //console.log('user logged out');
-        } else {
-            window.stop();
-            window.location.href = "/ShowcaseDemo";
-            //console.log('user logged out');
-        }
+	    window.stop();
+	    window.location.href = "/ShowcaseDemo/pc-auth-login.html";
+        
     }
 });
 
