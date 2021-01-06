@@ -101,6 +101,6 @@ logout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut().then(() => {
         console.log("This user has logged out");
-        window.location.href = "/ShowcaseDemo";
+        window.location.href = "/ShowcaseDemo/pc-auth-login.html";
     });
 });
