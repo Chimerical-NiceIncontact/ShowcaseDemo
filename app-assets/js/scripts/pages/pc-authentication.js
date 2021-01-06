@@ -86,11 +86,11 @@ auth.onAuthStateChanged(user => {
     } else {
         if (document.URL.includes("index.html")) {
             window.stop();
-            window.location.href = "html/ltr/vertical-menu-template-dark/pc-auth-login.html";
+            window.location.href = "/";
             //console.log('user logged out');
         } else {
             window.stop();
-            window.location.href = "pc-auth-login.html";
+            window.location.href = "/";
             //console.log('user logged out');
         }
     }
@@ -101,6 +101,6 @@ logout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut().then(() => {
         console.log("This user has logged out");
-        window.location.href = "html/ltr/vertical-menu-template-dark/pc-auth-login.html";
+        window.location.href = "/";
     });
 });
