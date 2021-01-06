@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', (e) => {
     })
 })
 
-// listen for auth status changes
+/* listen for auth status changes
 auth.onAuthStateChanged(user => {
     if(user) {
         console.log('user logged in: ', user);
@@ -21,3 +21,4 @@ auth.onAuthStateChanged(user => {
         console.log('user logged out');
     }
 });
+*/
