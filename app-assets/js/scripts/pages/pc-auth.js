@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', (e) => {
     
     auth.signInWithEmailAndPassword(username, password).then(cred => {
         console.log(cred.user);
-        window.location.href = "/index.html"
+        window.location.href = "/ShowcaseDemo"
     })
 })
 
