@@ -1,6 +1,9 @@
+// Variable declaration
 var signupForm = document.querySelector('#signup-form'),
     db = firebase.firestore(),
     user = firebase.auth().currentUser;
+
+// Listen for singup
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     var userId = "User03"; 
@@ -11,7 +14,7 @@ signupForm.addEventListener('submit', (e) => {
     // sign up the user
     auth.createUserWithEmailAndPassword(formEmail,formPassword).then(cred => {
         console.log(cred.user);
-        
+        // Create user in firestore
         db.collection('users').doc(cred.user.uid).set({
             Name: formName,
             Email: formEmail,
@@ -28,7 +31,7 @@ signupForm.addEventListener('submit', (e) => {
         })
         var userRef = db.collection('users').doc(user.uid).get().then(function (event) {
             var data = doc.data();
-            console.log("if here and no error, you fucked: "+ data);
+            console.log("if here and no error: "+ data);
         })
         
         
