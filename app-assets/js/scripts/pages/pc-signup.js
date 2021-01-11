@@ -1,4 +1,6 @@
-var signupForm = document.querySelector('#signup-form');
+var signupForm = document.querySelector('#signup-form'),
+    db = firebase.firestore(),
+    user = firebase.auth().currentUser;
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     var userId = "User03"; 
@@ -24,8 +26,12 @@ signupForm.addEventListener('submit', (e) => {
                 "B2": "123456"
             }  
         })
-        console.log("if here and no error, you fucked.");
+        var userRef = db.collection('users').doc(user.uid).get().then(function (event) {
+            var data = doc.data();
+            console.log("if here and no error, you fucked: "+ data);
+        })
         
-        window.location.href = "../../../index.html";
+        
+        //window.location.href = "../../../index.html";
     })    
 });

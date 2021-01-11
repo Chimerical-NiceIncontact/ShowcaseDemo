@@ -46,6 +46,9 @@
     <!-- Required for authenticating login information -->
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
 
+    <!-- Required for accessing Firestore info -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
@@ -150,20 +153,21 @@
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
-            apiKey: "AIzaSyCpniJdqLFIX1PeGg2OVzWHryBMUPFJkHI",
-            authDomain: "personalchimerical.firebaseapp.com",
-            databaseURL: "https://personalchimerical.firebaseio.com",
-            projectId: "personalchimerical",
-            storageBucket: "personalchimerical.appspot.com",
-            messagingSenderId: "345390088784",
-            appId: "1:345390088784:web:aa69abcc948c7ba9f14755",
-            measurementId: "G-VV6QHRXX0J"
+            apiKey: "AIzaSyDo0WMl_nlAC25xoFcwywdBFkbKdBdUwtI",
+            authDomain: "chimericalcorporate.firebaseapp.com",
+            databaseURL: "https://chimericalcorporate.firebaseio.com",
+            projectId: "chimericalcorporate",
+            storageBucket: "chimericalcorporate.appspot.com",
+            messagingSenderId: "254391940743",
+            appId: "1:254391940743:web:02aedb3e7380bde8e36a22",
+            measurementId: "G-ERTNJQDZ29"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
 
         const auth = firebase.auth();
+
     </script>
     <!-- END: Firebase Declaration -->
 
@@ -176,4 +180,6 @@
     <!-- END: Page JS-->
 
 </body>
-<!-- END: Body--></html>
+<!-- END: Body-->
+
+</html>

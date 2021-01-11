@@ -7,10 +7,10 @@ auth.onAuthStateChanged(user => {
     if (user) {
         // Other way around
         db.collection("users").doc(user.uid).get().then(function (doc) {
-            var c32 = doc.data().AgentId.C32;
-            var c35 = doc.data().AgentId.C35;
-            var b32 = doc.data().AgentId.B32;
-            var b2 = doc.data().AgentId.B2;
+            var c32 = doc.data().AgentID.C32;
+            var c35 = doc.data().AgentID.C35;
+            var b32 = doc.data().AgentID.B32;
+            var b2 = doc.data().AgentID.B2;
             
             document.getElementById("c35ID").value = c35;
             document.getElementById("c32ID").value = c32;
