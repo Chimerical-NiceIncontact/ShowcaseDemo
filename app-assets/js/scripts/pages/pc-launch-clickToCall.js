@@ -8,10 +8,10 @@ auth.onAuthStateChanged(user => {
         // Other way around
         db.collection("users").doc(user.uid).get().then(function (doc) {
             var idBU = '';
-            for (let i in doc.data().AgentId) {
-                idBU = doc.data().AgentId[i];
-                console.log(idBU);
-                document.getElementById("cxoneOpt").innerHTML += '<option value="' + doc.data().AgentId[i] + '"class="buID" data-icon="feather icon-folder">' + idBU + '</option>';
+            for (let i in doc.data().AgentID) {
+                idBU = doc.data().AgentID[i];
+                //console.log();
+                document.getElementById("cxoneOpt").innerHTML += '<option value="' + doc.data().AgentID[i] + '"class="buID" data-icon="feather icon-folder">' + idBU + '</option>';
             }
             // Phone Submit Actions
             $("button#phone-submit").on("click", function (e) {
@@ -21,10 +21,10 @@ auth.onAuthStateChanged(user => {
                 var contactReason = $("input.contactReason").val();
                 var agentId = $("#select2-icons option:selected").val();
                 // Get Right URL
-                var c32 = doc.data().AgentId.C32;
-                var c35 = doc.data().AgentId.C35;
-                var b32 = doc.data().AgentId.B32;
-                var b2 = doc.data().AgentId.B2;
+                var c32 = doc.data().AgentID.C32;
+                var c35 = doc.data().AgentID.C35;
+                var b32 = doc.data().AgentID.B32;
+                var b2 = doc.data().AgentID.B2;
                 if (c32.localeCompare(agentId) === 0) {
                     $(function() {
                         $('#hiddenpagec32').load("https://home-c32.nice-incontact.com/inContact/Manage/Scripts/Spawn.aspx?scriptName=ChimericalCorporation%5cChimericalClickToCall&bus_no=4596619&scriptId=84257682&skill_no=4020410&p1=" + firstName + "&p2=" + phoneNum + "&p3=" + agentId + "&p4=&p5=&Guid=06b1144c-fdc3-48ab-9064-a71a8b87bc8c");

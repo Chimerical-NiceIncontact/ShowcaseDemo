@@ -1,4 +1,3 @@
-
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
@@ -60,14 +59,14 @@
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
-            apiKey: "AIzaSyCpniJdqLFIX1PeGg2OVzWHryBMUPFJkHI",
-            authDomain: "personalchimerical.firebaseapp.com",
-            databaseURL: "https://personalchimerical.firebaseio.com",
-            projectId: "personalchimerical",
-            storageBucket: "personalchimerical.appspot.com",
-            messagingSenderId: "345390088784",
-            appId: "1:345390088784:web:aa69abcc948c7ba9f14755",
-            measurementId: "G-VV6QHRXX0J"
+            apiKey: "AIzaSyDo0WMl_nlAC25xoFcwywdBFkbKdBdUwtI",
+            authDomain: "chimericalcorporate.firebaseapp.com",
+            databaseURL: "https://chimericalcorporate.firebaseio.com",
+            projectId: "chimericalcorporate",
+            storageBucket: "chimericalcorporate.appspot.com",
+            messagingSenderId: "254391940743",
+            appId: "1:254391940743:web:02aedb3e7380bde8e36a22",
+            measurementId: "G-ERTNJQDZ29"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -99,7 +98,7 @@
                             <!--   a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')-->
                             <!--     i.ficon.feather.icon-menu-->
                             <li class="nav-item d-none d-lg-block"><a class="nav-link" href="html/ltr/vertical-menu-template-dark/pc-app-todo.html" data-toggle="tooltip" data-placement="top" title="Todo"><i class="ficon feather icon-check-square"></i></a></li>
-                            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="html/ltr/vertical-menu-template-dark/pc-app-email.html" data-toggle="tooltip" data-placement="top" title="Launch"><i class="ficon feather icon-upload-cloud"></i></a></li>
+                            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="html/ltr/vertical-menu-template-dark/pc-app-launch.html" data-toggle="tooltip" data-placement="top" title="Launch"><i class="ficon feather icon-upload-cloud"></i></a></li>
                             <li class="nav-item d-none d-lg-block"><a class="nav-link" href="html/ltr/vertical-menu-template-dark/pc-app-calender.html" data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon feather icon-calendar"></i></a></li>
                         </ul>
                         <ul class="nav navbar-nav">
@@ -157,7 +156,7 @@
                             </ul>
                         </li>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600" id="FSname"></span><span class="user-status" id="user-role"></span></div><span><img class="round" src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600" id="FSname">Loading...</span><span class="user-status" id="user-role">Loading...</span></div><span><img class="round" src="app-assets/images/portrait/small/avatar.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="html/ltr/vertical-menu-template-dark/pc-app-user-view.html"><i class="feather icon-user"></i> Edit Account</a><a class="dropdown-item" href="html/ltr/vertical-menu-template-dark/pc-custom-page-cx.html"><i class="feather icon-file-text"></i> Demo Pages</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="#" id="logout"><i class="feather icon-power"></i> Logout</a>
@@ -169,81 +168,8 @@
         </div>
     </nav>
     <ul class="main-search-list-defaultlist d-none">
-        <li class="d-flex align-items-center"><a class="pb-25" href="#">
-                <h6 class="text-primary mb-0">Files</h6>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/xls.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/jpg.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;11kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/pdf.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;150kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/doc.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;256kb</small>
-            </a></li>
-        <li class="d-flex align-items-center"><a class="pb-25" href="#">
-                <h6 class="text-primary mb-0">Members</h6>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
-                    </div>
-                </div>
-            </a></li>
     </ul>
     <ul class="main-search-list-defaultlist-other-list d-none">
-        <li class="auto-suggestion d-flex align-items-center justify-content-between cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100 py-50">
-                <div class="d-flex justify-content-start"><span class="mr-75 feather icon-alert-circle"></span><span>No results found.</span></div>
-            </a></li>
     </ul>
     <!-- END: Header-->
 
@@ -270,19 +196,19 @@
                 </li>
                 <li class=" navigation-header"><span>Apps</span>
                 </li>
-                <li class=" nav-item"><a href="html/ltr/vertical-menu-template-dark/pc-app-email.html"><i class="feather icon-upload-cloud"></i><span class="menu-title" data-i18n="Email">Launch</span></a>
+                <li class=" nav-item Sales-Engineer Administrator"><a href="html/ltr/vertical-menu-template-dark/pc-app-launch.html"><i class="feather icon-upload-cloud"></i><span class="menu-title" data-i18n="Email">Launch</span></a>
                 </li>
-                <li class=" nav-item"><a href="html/ltr/vertical-menu-template-dark/pc-app-todo.html"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Todo</span></a>
+                <li class=" nav-item Administrator"><a href="html/ltr/vertical-menu-template-dark/pc-app-todo.html"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Todo</span></a>
                 </li>
-                <li class=" nav-item"><a href="html/ltr/vertical-menu-template-dark/pc-app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Calender</span></a>
+                <li class=" nav-item Developer"><a href="html/ltr/vertical-menu-template-dark/pc-app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Calender</span></a>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
                     <ul class="menu-content">
-                        <li><a href="html/ltr/vertical-menu-template-dark/pc-app-user-list.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
+                        <li class="Administrator"><a href="html/ltr/vertical-menu-template-dark/pc-app-user-list.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
-                        <li><a href="html/ltr/vertical-menu-template-dark/pc-app-user-view.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">View</span></a>
+                        <li class="Administrator Sales-Engineer Partner"><a href="html/ltr/vertical-menu-template-dark/pc-app-user-view.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">View</span></a>
                         </li>
-                        <li><a href="html/ltr/vertical-menu-template-dark/pc-app-user-edit.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
+                        <li class="Administrator Sales-Engineer Partner"><a href="html/ltr/vertical-menu-template-dark/pc-app-user-edit.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
                     </ul>
                 </li>
@@ -447,7 +373,7 @@
 
     <!-- auth stuff -->
     <script src="app-assets/js/scripts/pages/pc-authentication.js"></script>
-    <!--script src="app-assets/js/scripts/pages/pc-index.js"></script>-->
+
 
 </body>
 <!-- END: Body-->
