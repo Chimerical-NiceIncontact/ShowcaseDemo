@@ -144,10 +144,10 @@
                             </ul>
                         </li>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600" id="FSname"></span><span class="user-status" id="user-role"></span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html"><i class="feather icon-power"></i> Logout</a>
+                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="pc-app-user-edit.html"><i class="feather icon-user"></i> Edit Account</a><a class="dropdown-item" href="pc-custom-page.html"><i class="feather icon-mail"></i> Demo Pages</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Todo</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html" id="logout"><i class="feather icon-power"></i> Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -256,20 +256,24 @@
                 </li>
                 <li class=" navigation-header"><span>Apps</span>
                 </li>
-                <li class=" nav-item"><a href="pc-app-email.html"><i class="feather icon-upload-cloud"></i><span class="menu-title" data-i18n="Launch">Launch</span></a>
+                <li class=" nav-item"><a href="pc-app-launch.html"><i class="feather icon-upload-cloud"></i><span class="menu-title" data-i18n="Launch">Launch</span></a>
                 </li>
                 <li class=" nav-item"><a href="pc-app-todo.html"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Todo</span></a>
                 </li>
+                <!--
                 <li class="disabled nav-item"><a href="pc-app-calender.html"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Calender</span></a>
                 </li>
+                -->
                 <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
                     <ul class="menu-content">
                         <li class="active"><a href="#"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
                         </li>
                         <li><a href="pc-app-user-view.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">View</span></a>
                         </li>
+                        <!--
                         <li><a href="pc-app-user-edit.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Edit">Edit</span></a>
                         </li>
+                        -->
                     </ul>
                 </li>
             </ul>
@@ -346,61 +350,63 @@
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">Name</label>
-                                            <input type="text" class="form-control" id="data-name">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-username">Username</label>
-                                            <input type="text" class="form-control" id="data-username">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-email">Email</label>
-                                            <input type="text" class="form-control" id="data-email">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-phone">Phone</label>
-                                            <input type="text" class="form-control" id="data-phone">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-role">Role</label>
-                                            <select class="form-control" id="data-role">
-                                                <option>Administrator</option>
-                                                <option>Sales Engineer</option>
-                                                <option>Sales Manager</option>
-                                                <option>Partner</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label style="font-weight: bold">Agent ID</label>
-                                            <hr>
-                                            <label for="data-c35">C35</label>
-                                            <input type="text" class="form-control" id="data-c35">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-c32">C32</label>
-                                            <input type="text" class="form-control" id="data-c32">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-b32">B32</label>
-                                            <input type="text" class="form-control" id="data-b32">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-b2">B2</label>
-                                            <input type="text" class="form-control" id="data-b2">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label style="font-weight: bold">Actions</label>
-                                            <hr>
-                                            <div class="custom-control custom-switch switch-lg custom-switch-success mr-2 mb-1">
-                                                <p class="mb-0">Status</p>
-                                                <input type="checkbox" class="custom-control-input" id="customSwitch100">
-                                                <label class="custom-control-label" for="customSwitch100">
-                                                    <span class="switch-text-left">Active</span>
-                                                    <span class="switch-text-right">Inactive</span>
-                                                </label>
+                                        <form id="checkerForm">
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-name">Name</label>
+                                                <input type="text" class="form-control" id="data-name" name="changeName">
                                             </div>
-                                        </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-username">Username</label>
+                                                <input type="text" class="form-control" id="data-username" name="changeUsername">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-email">Email</label>
+                                                <input type="text" class="form-control" id="data-email" name="changeEmail">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-phone">Phone</label>
+                                                <input type="text" class="form-control" id="data-phone" name="changePhone">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-role">Role</label>
+                                                <select class="form-control" id="data-role" name="changeRole">
+                                                    <option>Administrator</option>
+                                                    <option>Sales Engineer</option>
+                                                    <option>Sales Manager</option>
+                                                    <option>Partner</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label style="font-weight: bold">Agent ID</label>
+                                                <hr>
+                                                <label for="data-c35">C35</label>
+                                                <input type="text" class="form-control" id="data-c35">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-c32">C32</label>
+                                                <input type="text" class="form-control" id="data-c32">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-b32">B32</label>
+                                                <input type="text" class="form-control" id="data-b32">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-b2">B2</label>
+                                                <input type="text" class="form-control" id="data-b2">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label style="font-weight: bold">Actions</label>
+                                                <hr>
+                                                <div class="custom-control custom-switch switch-lg custom-switch-success mr-2 mb-1">
+                                                    <p class="mb-0">Status</p>
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitch100">
+                                                    <label class="custom-control-label" for="customSwitch100">
+                                                        <span class="switch-text-left">Active</span>
+                                                        <span class="switch-text-right">Inactive</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -496,6 +502,9 @@
     <!-- Required for accessing Firestore info -->
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
 
+    <!-- Required for authenticating login information -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -514,6 +523,8 @@
         firebase.analytics();
 
         var firebaseRef = firebase.database().ref();
+        const auth = firebase.auth();
+
     </script>
 
     <script src="../../../app-assets/js/scripts/pages/pc-user-list.js"></script>
@@ -521,7 +532,10 @@
 
     <!-- BEGIN: Page JS-->
     <script src="../../../app-assets/js/scripts/ui/pc-data-list-view.js"></script>
+    <script src="../../../app-assets/js/scripts/pages/pc-authentication.js"></script>
     <!-- END: Page JS-->
 
 </body>
-<!-- END: Body--></html>
+<!-- END: Body-->
+
+</html>

@@ -184,7 +184,6 @@ $(document).ready(function () {
             console.log(data.AgentID.C35);
 
             // Use UID to grab relevant information
-
             $('#data-name').val(data.Name);
             $('#data-email').val(data.Email);
             $('#data-phone').val(data.Phone);
@@ -196,6 +195,7 @@ $(document).ready(function () {
             $(".add-new-data").addClass("show");
             $(".overlay-bg").addClass("show");
 
+            /*
             // Check status for switch
             if (data.Status == "Active") {
                 console.log(data.Status);
@@ -204,6 +204,7 @@ $(document).ready(function () {
                 console.log(data.Status);
                 $('#customSwitch100').removeAttr('checked');
             }
+            */
 
             // Changed checked att when switch is pressed
             $('#customSwitch100').click(function () {
@@ -215,78 +216,6 @@ $(document).ready(function () {
                     $('#customSwitch100').attr('checked', 'checked');
                     switchChange = true;
                 }
-            });
-
-
-
-            // Check for data change ** AGENT ID **    
-            var changeC35 = false,
-                changeC32 = false,
-                changeB32 = false;
-            var changedC35 = "",
-                changedC32 = "",
-                changedB32 = "";
-            $("#data-c35").on("input", function () {
-                console.log("Change to " + this.value);
-                changeC35 = true;
-                console.log(changeC35 + ":" + changeC32 + ":" + changeB32);
-                changedC35 = this.value;
-            });
-            $("#data-c32").on("input", function () {
-                console.log("Change to " + this.value);
-                changeC32 = true;
-                console.log(changeC35 + ":" + changeC32 + ":" + changeB32);
-                changedC32 = this.value;
-            });
-            $("#data-b32").on("input", function () {
-                console.log("Change to " + this.value);
-                changeB32 = true;
-                console.log(changeC35 + ":" + changeC32 + ":" + changeB32);
-                changedB32 = this.value;
-            });
-
-            // Check for data change ** USER INFO **    
-            var changeName = false,
-                changeEmail = false,
-                changePhone = false,
-                changeRole = false,
-                changeUsername = false;
-            var changedName = "",
-                changedEmail = "",
-                changedPhone = "",
-                changedRole = "",
-                changedUsername = "";
-
-
-            $("#data-name").on("input", function () {
-                console.log("Change to " + this.value);
-                changeName = true;
-                console.log(changeName + ":" + changeEmail + ":" + changePhone);
-                changedName = this.value;
-            });
-            $("#data-email").on("input", function () {
-                console.log("Change to " + this.value);
-                changeEmail = true;
-                console.log(changeName + ":" + changeEmail + ":" + changePhone);
-                changedEmail = this.value;
-            });
-            $("#data-phone").on("input", function () {
-                console.log("Change to " + this.value);
-                changePhone = true;
-                console.log(changeName + ":" + changeEmail + ":" + changePhone);
-                changedPhone = this.value;
-            });
-            $("#data-username").on("input", function () {
-                console.log("Change to " + this.value);
-                changeUsername = true;
-                console.log(changeName + ":" + changeEmail + ":" + changePhone + ":" + changeRole);
-                changedUsername = this.value;
-            });
-            $("#data-role").on("input", function () {
-                console.log("Change to " + this.value);
-                changeRole = true;
-                console.log(changeName + ":" + changeEmail + ":" + changePhone + ":" + changeRole);
-                changedRole = this.value;
             });
 
             // Create New User
@@ -301,295 +230,50 @@ $(document).ready(function () {
                     window.location.href = "../../../index.html";
                 })
                 */
-
             });
-
-
-            // Upload stuff to db
-            $("#change-acceptance").click(function () {
-                if (deleteReq == true) {
-                    console.log("It has been deleted");
-                    //userDocRef.doc(classID[0]).delete();
-                }
-                // If statement for user changes
-                // Goes in visual order of action sub-menu 
-                if (changeName == true) {
-                    if (changeEmail == true) {
-                        if (changePhone == true) {
-                            if (changeUsername == true) {
-                                if (changeRole == true) {
-                                    // If all fields have been changed
-                                    userDocRef.doc(classID[0]).update({
-                                        "Name": changedName,
-                                        "Email": changedEmail,
-                                        "Phone": changedPhone,
-                                        "Role": changedRole,
-                                        "Username": changedUsername
-                                    });
-                                    // Reset All Vars
-                                    changeName = false;
-                                    changeEmail = false;
-                                    changePhone = false;
-                                    changeRole = false;
-                                    changeUsername = false;
-
-                                    // Reset Changed Values
-                                    changedName = "";
-                                    changedEmail = "";
-                                    changedPhone = "";
-                                    changedRole = "";
-                                    changedUsername = "";
-                                } else {
-                                    // If all fields but role have been changed
-                                    userDocRef.doc(classID[0]).update({
-                                        "Name": changedName,
-                                        "Email": changedEmail,
-                                        "Phone": changedPhone,
-                                        "Username": changedUsername
-                                    });
-                                    changeName = false;
-                                    changeEmail = false;
-                                    changePhone = false;
-                                    changeUsername = false;
-                                }
-                            } else {
-                                // If all fields but role and username have been changed
-                                userDocRef.doc(classID[0]).update({
-                                    "Name": changedName,
-                                    "Email": changedEmail,
-                                    "Phone": changedPhone
-                                });
-                                changeName = false;
-                                changeEmail = false;
-                                changePhone = false;
-                            }
-                        } else {
-                            // If all fields but role, username and phone have been changed
-                            userDocRef.doc(classID[0]).update({
-                                "Name": changedName,
-                                "Email": changedEmail
-                            });
-                            changeName = false;
-                            changeEmail = false;
-                        }
-                    } else {
-                        // If all fields but phone and role have been changed
-                        userDocRef.doc(classID[0]).update({
-                            "Name": changedName
-
-                        });
-                        changeName = false;
-
-                    }
-                    // If name hasnt been changed
-                } else if (changeEmail == true) {
-                    if (changePhone == true) {
-                        if (changeUsername == true) {
-                            if (changeRole == true) {
-                                // If all but name have been changed
-                                userDocRef.doc(classID[0]).update({
-                                    "Email": changedEmail,
-                                    "Phone": changedPhone,
-                                    "Role": changedRole,
-                                    "Username": changedUsername
-                                });
-                                changeEmail = false;
-                                changePhone = false;
-                                changeRole = false;
-                                changeUsername = false;
-                            } else {
-                                // If all but name and role have been changed
-                                userDocRef.doc(classID[0]).update({
-                                    "Email": changedEmail,
-                                    "Phone": changedPhone,
-                                    "Username": changedUsername
-                                });
-                                changeEmail = false;
-                                changePhone = false;
-                                changeUsername = false;
-                            }
-                        } else {
-                            // If only email has been changed
-                            userDocRef.doc(classID[0]).update({
-                                "Email": changedEmail,
-                                "Phone": changedPhone
-                            });
-                            changeEmail = false;
-                            changePhone = false;
-
-                        }
-                    } else {
-                        // If only email has been changed
-                        userDocRef.doc(classID[0]).update({
-                            "Email": changedEmail
-                        });
-                        changeEmail = false;
-                    }
-
-                    // If phone, username, role changed
-                } else if (changePhone == true) {
-                    if (changeUsername == true) {
-                        if (changeRole == true) {
-                            // If only Phone and role have been changed
-                            userDocRef.doc(classID[0]).update({
-                                "Phone": changedPhone,
-                                "Username": changedUsername,
-                                "Role": changedRole
-                            });
-                            changePhone = false;
-                            changeRole = false;
-                            changeUsername = false;
-
-                        } else {
-                            // If only phone has been changed
-                            userDocRef.doc(classID[0]).update({
-                                "Phone": changedPhone,
-                                "Username": changedUsername
-                            });
-                            changePhone = false;
-                            changeUsername = false;
-
-                        }
-                    } else {
-                        // If only phone has been changed
-                        userDocRef.doc(classID[0]).update({
-                            "Phone": changedPhone
-                        });
-                        changePhone = false;
-                    }
-                } else if (changeUsername == true) {
-                    if (changeRole == true) {
-                        // If only phone has been changed
-                        userDocRef.doc(classID[0]).update({
-                            "Username": changedUsername,
-                            "Role": changedRole
-                        });
-                        changeUsername = false;
-                        changeRole = false;
-                    } else {
-                        // If only phone has been changed
-                        userDocRef.doc(classID[0]).update({
-                            "Username": changedUsername
-                        });
-                        changeUsername = false;
-                    }
-                } else if (changeRole == true) {
-                    // If only role has been changed
-                    userDocRef.doc(classID[0]).update({
-                        "Role": changedRole
-                    });
-                    changeRole = false;
-
-                }
-                // If statement for agent id changes
-                if (changeC35 == true) {
-                    //console.log(changedC35);
-                    if (changeC32 == true) {
-                        //console.log(changedC32);
-                        if (changeB32 == true) {
-                            //console.log(changedB32);
-                            userDocRef.doc(classID[0]).update({
-                                "AgentID.C35": changedC35,
-                                "AgentID.C32": changedC32,
-                                "AgentID.B32": changedB32
-                            });
-                            // Change Reset
-                            changeC35 = false;
-                            changeC32 = false;
-                            changeB32 = false;
-                            // Var Reset
-                            changedC35 = "";
-                            changedC32 = "";
-                            changedB32 = "";
-
-                        } else {
-                            //console.log(changedC35 + ":" + changedC32);
-                            userDocRef.doc(classID[0]).update({
-                                "AgentID.C35": changedC35,
-                                "AgentID.C32": changedC32
-                            });
-                            changeC35 = false;
-                            changeC32 = false;
-                            // Var Reset
-                            changedC35 = "";
-                            changedC32 = "";
-
-
-                        }
-                    } else {
-                        userDocRef.doc(classID[0]).update({
-                            "AgentID.C35": changedC35
-                        });
-                        changeC35 = false;
-                        // Var Reset
-                        changedC35 = "";
-
-
-                    }
-                } else if (changeC32 == true) {
-                    //console.log(changedC32);
-                    if (changeB32 == true) {
-                        //console.log(changedC32 + ":" + changedB32);
-                        userDocRef.doc(classID[0]).update({
-                            "AgentID.C32": changedC32,
-                            "AgentID.B32": changedB32
-                        });
-                        changeC32 = false;
-                        changeB32 = false;
-                        // Var Reset
-                        changedC32 = "";
-                        changedB32 = "";
-
-
-                    } else {
-                        userDocRef.doc(classID[0]).update({
-                            "AgentID.C32": changedC32
-                        });
-                        changeC32 = false;
-                        // Var Reset
-                        changedC32 = "";
-
-
-                    }
-                } else if (changeB32 == true) {
-                    //console.log(changedB32);
-                    userDocRef.doc(classID[0]).update({
-                        "AgentID.B32": changedB32
-                    });
-                    changeB32 = false;
-                    // Var Reset
-                    changedB32 = "";
-
-
-                }
-
-                if (switchChange == true) {
-                    //console.log(switchChange);
-                    var tempCheck = document.getElementById("customSwitch100").hasAttribute("checked");
-                    if (tempCheck == true) {
-                        //console.log(tempCheck);
-                        userDocRef.doc(classID[0]).update({
-                            Status: "Active"
-                        });
-
-                    } else {
-                        //console.log(tempCheck);
-                        userDocRef.doc(classID[0]).update({
-                            Status: "Inactive"
-                        });
-
-                    }
-                }
-
-                console.log(deleteReq);
-            });
-
 
             // Testing Logs
             console.log(data.Name);
         }
         // Call Data Function
         getDoc(classID[0]);
+
+        var changeName,
+            changeEmail,
+            changePhone,
+            changeRole,
+            changeUsername,
+            changeName = (changeEmail = changePhone = changeRole = changeUsername = false);
+        var changeAgentC35,
+            changeAgentC32,
+            changeAgentB32,
+            changeAgentB2 = (changeAgentC35 = changeAgentC32 = changeAgentB32 = changeAgentB2 = false);
+
+        console.log(classID);
+
+        $("form#checkerForm").on("change", ":input", function (e) {
+            //':input' selector get all form fields even textarea, input, or select
+            window[$(this).attr("name")] = true;
+            console.log($(this).attr("name"));
+            console.log(changeName);
+        });
+
+        // Upload stuff to db
+        $("#change-acceptance").click(function () {
+            var changedName = $('#data-name').val();
+            var changedEmail = $('#data-email').val();
+            var changedPhone = $('#data-phone').val();
+            var changedRole = $('#data-role').val();
+            var changedUsername = $('#data-username').val();
+            var postData = {
+                Name: changedName ? changedName : null,
+                Email: changedEmail ? changedEmail : null,
+                Phone: changedPhone ? changedPhone : null,
+                Role: changedRole ? changedRole : null,
+                Username: changedUsername ? changedUsername : null,
+            };
+            userDocRef.doc(classID[0]).update(postData);
+        });
 
         // Testing Logs
         console.log(classID[0]);
