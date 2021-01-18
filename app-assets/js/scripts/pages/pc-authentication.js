@@ -29,12 +29,13 @@ var db = firebase.firestore();
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-        console.log('user logged in: ', user);
+        //console.log('user logged in: ', user);
+        
         // If we are viewing the User Details Page
         if (document.URL.includes("pc-app-user-view.html")) {
             db.collection("users").doc(user.uid).get().then(function (doc) {
                 if (doc.exists) {
-                    console.log("Data: ", doc.data());
+                    //console.log("Data: ", doc.data());
                     document.getElementById("FSusername").innerHTML = doc.data().Username;
                     document.getElementById("FSname").innerHTML = doc.data().Name;
                     document.getElementById("FSemail").innerHTML = doc.data().Email;
@@ -48,7 +49,7 @@ auth.onAuthStateChanged(user => {
         } else if (document.URL.includes("pc-app-user-edit.html")) {
             db.collection("users").doc(user.uid).get().then(function (doc) {
                 if (doc.exists) {
-                    console.log(doc.data().Role);
+                    //console.log(doc.data().Role);
                     // Fill in the name at the top
                     document.getElementById("FSnameHeader").innerHTML = doc.data().Name;
                     // Fill in the fields
@@ -64,7 +65,7 @@ auth.onAuthStateChanged(user => {
                         if (optionChoice.localeCompare(doc.data().Role) === 0){
                             document.getElementById("roleOptions").options[i].selected = true;
                         } else {
-                            console.log("Non-matched");
+                            //console.log("Non-matched");
                         }
                     }
                     // Name plate
@@ -76,7 +77,8 @@ auth.onAuthStateChanged(user => {
             // If we are viewing all other pages
             db.collection("users").doc(user.uid).get().then(function (doc) {
                 if (doc.exists) {
-                    console.log("Data: ", doc.data());
+                    //console.log("Data: ", doc.data());
+                    
                     // Name Plate
                     document.getElementById("FSname").innerHTML = doc.data().Name;
                     document.getElementById("user-role").innerHTML = doc.data().Role;

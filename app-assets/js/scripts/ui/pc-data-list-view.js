@@ -13,7 +13,7 @@ const userDocRef = db.collection('users');
 
 userDocRef.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-        console.log(doc.id, " => ", doc.data())
+        //console.log(doc.id, " => ", doc.data())
         if (doc.data().Status == "Active") {
             var chipColor = "success";
         } else if (doc.data().Status == "Inactive") {
@@ -166,6 +166,19 @@ $(document).ready(function () {
     // Var Declarations for Edit and Delete
     var deleteReq = "false";
 
+    // On Delete
+    $('.action-delete').on("click", function (e) {
+        e.preventDefault();
+        deleteReq = true;
+        $('#default').modal('toggle');
+        var locationDelete = $(this).closest('td').parent('tr');
+
+        // Check if we want to do this or not Modal
+        $("#change-acceptance").click(function () {
+            locationDelete.fadeOut();
+        });
+    });
+
     // On Edit
     $('.action-edit').on("click", function (e) {
         e.stopPropagation();
@@ -218,7 +231,7 @@ $(document).ready(function () {
                 changeAgentC32,
                 changeAgentB32,
                 changeAgentB2 = (changeAgentC35 = changeAgentC32 = changeAgentB32 = changeAgentB2 = false);
-            
+
             // Changed checked att when switch is pressed
             $('#customSwitch100').click(function () {
                 var switchRefCheck = document.getElementById("customSwitch100").hasAttribute("checked");
@@ -254,6 +267,10 @@ $(document).ready(function () {
 
             // Upload stuff to db
             $("#change-acceptance").click(function () {
+                if (deleteReq === true) {
+                    $('#default').modal('toggle');
+                    $(this).closest('td').parent('tr').fadeOut();
+                }
                 // User Info
                 var changedName = $('#data-name').val();
                 var changedEmail = $('#data-email').val();
@@ -267,7 +284,7 @@ $(document).ready(function () {
                 var changedAgentC32 = $('#data-c32').val();
                 var changedAgentB32 = $('#data-b32').val();
                 var changedAgentB2 = $('#data-b2').val();
-                
+
                 // POST
                 var postData = {
                     Name: changedName ? changedName : null,
@@ -284,9 +301,9 @@ $(document).ready(function () {
                     }
                 };
                 userDocRef.doc(classID[0]).update(postData);
-                location.reload();
-            });
 
+            });
+            location.reload();
 
             // Testing Logs
             console.log(data.Name);
@@ -297,16 +314,6 @@ $(document).ready(function () {
         // Testing Logs
         console.log(classID[0]);
 
-    });
-
-
-    // On Delete
-    $('.action-delete').on("click", function (e) {
-        e.stopPropagation();
-        deleteReq = true;
-        $('#default').modal('toggle');
-        console.log(deleteReq);
-        //$(this).closest('td').parent('tr').fadeOut();
     });
 
     // mac chrome checkbox fix
