@@ -75,6 +75,7 @@
         var firebaseRef = firebase.database().ref();
 
         const auth = firebase.auth();
+
     </script>
     <!-- END: Firebase JS-->
 
@@ -305,64 +306,11 @@
                                                         <input type="text" id="FSphone" class="form-control" value="" placeholder="Phone Number" name="changePhone">
                                                     </div>
                                                 </div>
-
-
-                                                <div class="col-12 administrator">
-                                                    <!--
-                                                    <div class="table-responsive border rounded px-1 ">
-                                                        <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i class="feather icon-lock mr-50 "></i>Permission</h6>
-                                                        <table class="table table-borderless">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Pages</th>
-                                                                    <th>Access</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Launch</td>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox"><input type="checkbox" id="launch-checkbox1" class="custom-control-input" checked>
-                                                                            <label class="custom-control-label" for="launch-checkbox"></label>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Todo</td>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox"><input type="checkbox" id="todo-checkbox" class="custom-control-input"><label class="custom-control-label" for="todo-checkbox"></label>
-                                                                        </div>
-                                                                    </td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Calender</td>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox"><input type="checkbox" id="calendar-checkbox" class="custom-control-input" checked>
-                                                                            <label class="custom-control-label" for="calendar-checkbox"></label>
-                                                                        </div>
-                                                                    </td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>User</td>
-                                                                    <td>
-                                                                        <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox" class="custom-control-input" checked>
-                                                                            <label class="custom-control-label" for="users-checkbox"></label>
-                                                                        </div>
-                                                                    </td>
-
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
--->
-                                                </div>
                                             </div>
                                             <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                                <button type="submit" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1" id="change-acceptance">Save
+                                                <button type="button" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1 saveBTN">Save
                                                     Changes</button>
-                                                <button type="reset" class="btn btn-outline-danger">Reset</button>
+                                                <button type="button" class="resetBTN btn btn-outline-danger">Reset</button>
                                             </div>
                                         </form>
 
@@ -377,19 +325,20 @@
                                                     <div class="form-group">
                                                         <div class="controls">
                                                             <label>Phone Number</label>
-                                                            <input type="text" class="form-control" value="&#43;16785754668" placeholder="Mobile number here..." data-validation-required-message="This mobile number is required" >
+                                                            <input type="text" class="form-control" value="&#43;16785754668" placeholder="Mobile number here..." data-validation-required-message="This mobile number is required" name="BotPhone" disabled>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <div class="controls">
                                                             <label>Email</label>
-                                                            <input type="text" class="form-control" required placeholder="Website here..." value="josh.gibson@niceincontact.com" data-validation-required-message="This Website field is required">
+                                                            <input type="text" class="form-control" required placeholder="Website here..." value="josh.gibson@niceincontact.com" data-validation-required-message="This Website field is required" name="BotEmail" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Languages</label>
-                                                        <select class="form-control" id="users-language-select2" multiple="multiple">
+                                                        <select class="form-control" id="users-language-select2" multiple="multiple" name="BotLanguage"
+                                                                disabled>
                                                             <option value="English" selected>English</option>
                                                             <option value="Spanish">Spanish</option>
                                                             <option value="French">French</option>
@@ -419,7 +368,7 @@
                                                             <li class="d-inline-block mr-2">
                                                                 <fieldset>
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" name="customCheck1" id="customCheck1">
+                                                                        <input type="checkbox" class="custom-control-input" name="customCheck1" id="customCheck1" disabled>
                                                                         <label class="custom-control-label" for="customCheck1">Email</label>
                                                                     </div>
                                                                 </fieldset>
@@ -427,7 +376,7 @@
                                                             <li class="d-inline-block mr-2">
                                                                 <fieldset>
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" name="customCheck2" id="customCheck2">
+                                                                        <input type="checkbox" class="custom-control-input" name="customCheck2" id="customCheck2" disabled>
                                                                         <label class="custom-control-label" for="customCheck2">SMS</label>
                                                                     </div>
                                                                 </fieldset>
@@ -435,7 +384,7 @@
                                                             <li class="d-inline-block mr-2">
                                                                 <fieldset>
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" name="customCheck3" id="customCheck3">
+                                                                        <input type="checkbox" class="custom-control-input" name="customCheck3" id="customCheck3" disabled>
                                                                         <label class="custom-control-label" for="customCheck3">Phone</label>
                                                                     </div>
                                                                 </fieldset>
@@ -448,9 +397,9 @@
                                                     <img src="../../../app-assets/images/pages/500.png" atl="branding logo" class="users-avatar-shadow rounded" style="margin-left: 125px; margin-top: 50px">
                                                 </div>
                                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                                    <button type="submit" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1" id="change-acceptance">Save
+                                                    <button type="button" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1 saveBTN">Save
                                                         Changes</button>
-                                                    <button type="reset" class="btn btn-outline-warning">Reset</button>
+                                                    <button type="button" class="resetBTN btn btn-outline-danger">Reset</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -504,9 +453,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                                    <button type="submit" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1" id="change-acceptance">Save
+                                                    <button type="button" class="btn btn-cxone glow mb-1 mb-sm-0 mr-0 mr-sm-1 saveBTN">Save
                                                         Changes</button>
-                                                    <button type="reset" class="btn btn-outline-warning">Reset</button>
+                                                    <button type="button" class="resetBTN btn btn-outline-danger">Reset</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -518,6 +467,30 @@
                     </div>
                 </section>
                 <!-- users edit ends -->
+                <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel1">Are You Sure?</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Please Confirm Changes</h5>
+                                <p>Are you sure you wish to make these changes?</p>
+                                <div class="alert alert-danger mt-1 alert-validation-msg" role="alert">
+                                    <i class="feather icon-info align-middle"></i>
+                                    <span><strong>NOTE:</strong> this action cannot be undone, once accepted the database is updated.</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="change-acceptance" class="btn btn-primary" data-dismiss="modal">Accept</button>
+                                <button class="btn btn-outline-danger waves-effect waves-light" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -561,4 +534,6 @@
     <!-- END: Authentication -->
 
 </body>
-<!-- END: Body--></html>
+<!-- END: Body-->
+
+</html>

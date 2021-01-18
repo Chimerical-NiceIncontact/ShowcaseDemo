@@ -17,7 +17,7 @@ auth.onAuthStateChanged(user => {
             document.getElementById("c32ID").value = c32;
             document.getElementById("b32ID").value = b32;
             document.getElementById("b2ID").value = b2;
-            
+
             getDoc(user.uid);
         })
     }
@@ -46,9 +46,13 @@ async function getDoc(id) {
         console.log($(this).attr("name"));
     });
 
+    $(".saveBTN").click(function (e) {
+        e.preventDefault();
+        $('#default').modal('toggle');
+    })
+
     // Upload stuff to db
     $("#change-acceptance").click(function () {
-        e.preventDefault()
         console.log("Button pressed");
         // User Info
         var changedName = $('#FSnameInput').val();
@@ -80,9 +84,23 @@ async function getDoc(id) {
             }
         };
         console.log(id);
-        userDocRef.doc(id).update(postData);
+        //userDocRef.doc(id).update(postData);
+
+        userDocRef.doc(id).update(postData).then(function () {
+            console.log("Document successfully updated!");
+            //console.log(postData);
+            location.reload();
+        }).catch(function (error) {
+            // The document probably doesnt exists
+            console.error("Error updating document: ", error);
+        });
+
+
+
 
     });
+    $(".resetBTN").click(function () {
+        window.location.href = "pc-app-user-view.html";
+    })
 
 }
-

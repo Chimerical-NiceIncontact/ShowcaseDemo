@@ -43,6 +43,10 @@ auth.onAuthStateChanged(user => {
                     document.getElementById("FSrole").innerHTML = doc.data().Role;
                     document.getElementById("loggedInUser").innerHTML = doc.data().Name;
                     document.getElementById("user-role").innerHTML = doc.data().Role;
+                    document.getElementById("c35ID").innerHTML = doc.data().AgentID.C35;
+                    document.getElementById("c32ID").innerHTML = doc.data().AgentID.C32;
+                    document.getElementById("b32ID").innerHTML = doc.data().AgentID.B32;
+                    document.getElementById("b2ID").innerHTML = doc.data().AgentID.B2;
                 };
             });
             // If we are viewing the Edit Page
