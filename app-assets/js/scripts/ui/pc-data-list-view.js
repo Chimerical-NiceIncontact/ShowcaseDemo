@@ -144,6 +144,7 @@ $(document).ready(function () {
         $(".overlay-bg").removeClass("show")
         $("#data-name, #data-email, #data-phone, #data-c35, #data-c32, #data-b32, #data-b2").val("")
         $("#data-role").prop("selectedIndex", 0)
+        location.reload(true);
     })
 
 
@@ -206,6 +207,44 @@ $(document).ready(function () {
             }
             */
 
+            var changeName,
+                changeEmail,
+                changePhone,
+                changeRole,
+                changeUsername,
+                changeName = (changeEmail = changePhone = changeRole = changeUsername = false);
+            var changeAgentC35,
+                changeAgentC32,
+                changeAgentB32,
+                changeAgentB2 = (changeAgentC35 = changeAgentC32 = changeAgentB32 = changeAgentB2 = false);
+
+            console.log(classID);
+
+            $("form#checkerForm").on("change", ":input", function (e) {
+                //':input' selector get all form fields even textarea, input, or select
+                window[$(this).attr("name")] = true;
+                console.log($(this).attr("name"));
+                console.log(changeName);
+            });
+
+            // Upload stuff to db
+            $("#change-acceptance").click(function () {
+                var changedName = $('#data-name').val();
+                var changedEmail = $('#data-email').val();
+                var changedPhone = $('#data-phone').val();
+                var changedRole = $('#data-role').val();
+                var changedUsername = $('#data-username').val();
+                var postData = {
+                    Name: changedName ? changedName : null,
+                    Email: changedEmail ? changedEmail : null,
+                    Phone: changedPhone ? changedPhone : null,
+                    Role: changedRole ? changedRole : null,
+                    Username: changedUsername ? changedUsername : null,
+                };
+                userDocRef.doc(classID[0]).update(postData);
+            });
+
+
             // Changed checked att when switch is pressed
             $('#customSwitch100').click(function () {
                 var switchRefCheck = document.getElementById("customSwitch100").hasAttribute("checked");
@@ -237,43 +276,6 @@ $(document).ready(function () {
         }
         // Call Data Function
         getDoc(classID[0]);
-
-        var changeName,
-            changeEmail,
-            changePhone,
-            changeRole,
-            changeUsername,
-            changeName = (changeEmail = changePhone = changeRole = changeUsername = false);
-        var changeAgentC35,
-            changeAgentC32,
-            changeAgentB32,
-            changeAgentB2 = (changeAgentC35 = changeAgentC32 = changeAgentB32 = changeAgentB2 = false);
-
-        console.log(classID);
-
-        $("form#checkerForm").on("change", ":input", function (e) {
-            //':input' selector get all form fields even textarea, input, or select
-            window[$(this).attr("name")] = true;
-            console.log($(this).attr("name"));
-            console.log(changeName);
-        });
-
-        // Upload stuff to db
-        $("#change-acceptance").click(function () {
-            var changedName = $('#data-name').val();
-            var changedEmail = $('#data-email').val();
-            var changedPhone = $('#data-phone').val();
-            var changedRole = $('#data-role').val();
-            var changedUsername = $('#data-username').val();
-            var postData = {
-                Name: changedName ? changedName : null,
-                Email: changedEmail ? changedEmail : null,
-                Phone: changedPhone ? changedPhone : null,
-                Role: changedRole ? changedRole : null,
-                Username: changedUsername ? changedUsername : null,
-            };
-            userDocRef.doc(classID[0]).update(postData);
-        });
 
         // Testing Logs
         console.log(classID[0]);
