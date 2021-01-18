@@ -332,91 +332,96 @@
                     <!-- DataTable ends -->
 
                     <!-- add new sidebar starts -->
+                    <form id="checkerForm">
                     <div class="add-new-data-sidebar">
                         <div class="overlay-bg"></div>
                         <div class="add-new-data">
-                            <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
-                                <div>
-                                    <h4 class="text-uppercase">User Admin</h4>
+                                <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
+                                    <div>
+                                        <h4 class="text-uppercase">User Admin</h4>
+                                    </div>
+                                    <div class="hide-data-sidebar">
+                                        <i class="feather icon-x"></i>
+                                    </div>
                                 </div>
-                                <div class="hide-data-sidebar">
-                                    <i class="feather icon-x"></i>
-                                </div>
-                            </div>
-                            <div class="data-items pb-3">
-                                <div class="data-fields px-2 mt-3">
-                                    <div class="row">
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">Name</label>
-                                            <input type="text" class="form-control" id="data-name">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-username">Username</label>
-                                            <input type="text" class="form-control" id="data-username">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-email">Email</label>
-                                            <input type="text" class="form-control" id="data-email">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-phone">Phone</label>
-                                            <input type="text" class="form-control" id="data-phone">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-role">Role</label>
-                                            <select class="form-control" id="data-role">
-                                                <option>Administrator</option>
-                                                <option>Sales Engineer</option>
-                                                <option>Sales Manager</option>
-                                                <option>Partner</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label style="font-weight: bold">Agent ID</label>
-                                            <hr>
-                                            <label for="data-c35">C35</label>
-                                            <input type="text" class="form-control" id="data-c35">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-c32">C32</label>
-                                            <input type="text" class="form-control" id="data-c32">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-b32">B32</label>
-                                            <input type="text" class="form-control" id="data-b32">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-b2">B2</label>
-                                            <input type="text" class="form-control" id="data-b2">
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label style="font-weight: bold">Actions</label>
-                                            <hr>
-                                            <div class="custom-control custom-switch switch-lg custom-switch-success mr-2 mb-1">
-                                                <p class="mb-0">Status</p>
-                                                <input type="checkbox" class="custom-control-input" id="customSwitch100">
-                                                <label class="custom-control-label" for="customSwitch100">
-                                                    <span class="switch-text-left">Active</span>
-                                                    <span class="switch-text-right">Inactive</span>
-                                                </label>
+
+                                <div class="data-items pb-3">
+                                    <div class="data-fields px-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-name">Name</label>
+                                                <input type="text" class="form-control" id="data-name" name="changeName">
                                             </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-username">Username</label>
+                                                <input type="text" class="form-control" id="data-username" name="changeUsername">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-email">Email</label>
+                                                <input type="text" class="form-control" id="data-email" name="changeEmail">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-phone">Phone</label>
+                                                <input type="text" class="form-control" id="data-phone" name="changePhone">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-role">Role</label>
+                                                <select class="form-control" id="data-role" name="changeRole">
+                                                    <option>Administrator</option>
+                                                    <option>Sales Engineer</option>
+                                                    <option>Sales Manager</option>
+                                                    <option>Partner</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label style="font-weight: bold">Agent ID</label>
+                                                <hr>
+                                                <label for="data-c35">C35</label>
+                                                <input type="text" class="form-control" id="data-c35" name="changeAgentC35">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-c32">C32</label>
+                                                <input type="text" class="form-control" id="data-c32" name="changeAgentC32">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-b32">B32</label>
+                                                <input type="text" class="form-control" id="data-b32" name="changeAgentB32">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label for="data-b2">B2</label>
+                                                <input type="text" class="form-control" id="data-b2" name="changeAgentB2">
+                                            </div>
+                                            <div class="col-sm-12 data-field-col">
+                                                <label style="font-weight: bold">Actions</label>
+                                                <hr>
+                                                <div class="custom-control custom-switch switch-lg custom-switch-success mr-2 mb-1">
+                                                    <p class="mb-0">Status</p>
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitch100" name="changeStatus">
+                                                    <label class="custom-control-label" for="customSwitch100">
+                                                        <span class="switch-text-left">Active</span>
+                                                        <span class="switch-text-right">Inactive</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
-                                <div class="add-data-btn">
-                                    <button type="button" class="btn btn-outline-cxone" id="user-upload" data-toggle="modal" data-target="#default">
-                                        Upload Data
-                                    </button>
+                                <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                    <div class="add-data-btn">
+                                        <button type="button" class="btn btn-outline-cxone" id="user-upload" data-toggle="modal" data-target="#default">
+                                            Upload Data
+                                        </button>
+                                    </div>
+                                    <div class="cancel-data-btn">
+                                        <button class="btn btn-outline-danger waves-effect waves-light">Cancel</button>
+                                    </div>
                                 </div>
-                                <div class="cancel-data-btn">
-                                    <button class="btn btn-outline-danger waves-effect waves-light">Cancel</button>
-                                </div>
-                            </div>
+                            
                             <!-- Button trigger modal -->
                         </div>
                     </div>
+                    </form>
                     <!-- Modal -->
                     <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
