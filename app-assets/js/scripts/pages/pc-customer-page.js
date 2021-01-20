@@ -14,7 +14,7 @@ $('#verborgen_file').change(function () {
             poc: '9bcf4734-6076-4c6f-ae75-7bbb808ac03f',
             params: ['FirstName', 'Last Name', 'first.last@company.com', 555 - 555 - 5555]
         });
-        $('#uploadButton').hide();
+        $('.card-body').hide();
     }
     if (file) {
         reader.readAsDataURL(file);
