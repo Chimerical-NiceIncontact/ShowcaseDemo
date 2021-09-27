@@ -1,5 +1,5 @@
 //login
-const loginForm = document.querySelector('#login-form');
+const loginForm = document.querySelector('#auth-login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -9,8 +9,9 @@ loginForm.addEventListener('submit', (e) => {
     
     auth.signInWithEmailAndPassword(username, password).then(cred => {
         console.log(cred.user);
-        window.location.href = "/ShowcaseDemo"
+        //window.location.href = "/ShowcaseDemo"
         //window.location.href = "index.html";
+        window.location.href = "html/ltr/vertical-menu-template-dark/pc-app-launch.html"
     })
 })
 

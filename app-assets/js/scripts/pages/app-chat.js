@@ -178,4 +178,5 @@ function enter_chat(source) {
   $(".message").val("");
   $(".user-chats").scrollTop($(".user-chats > .chats").height());
    }
+    $('.chat:last-child .chat-body').append('<div class="chat-content"><p>Sounds Good!</p></div>');
 }

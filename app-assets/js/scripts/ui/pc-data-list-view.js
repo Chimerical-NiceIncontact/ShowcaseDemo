@@ -300,10 +300,17 @@ $(document).ready(function () {
                         B2: changedAgentB2 ? changedAgentB2 : null
                     }
                 };
-                userDocRef.doc(classID[0]).update(postData);
+                userDocRef.doc(id).update(postData).then(function () {
+                    console.log("Document successfully updated!");
+                    //console.log(postData);
+                    location.reload();
+                }).catch(function (error) {
+                    // The document probably doesnt exists
+                    console.error("Error updating document: ", error);
+                });
+
 
             });
-            location.reload();
 
             // Testing Logs
             console.log(data.Name);
